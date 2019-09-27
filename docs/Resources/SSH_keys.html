@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SSH_keys</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p>Some help on SSH keys</p>
+<p><a href="https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/">Generating SSH keys</a></p>
+<pre class="shell"><code>$ ssh-keygen -t rsa -b 4096 -C &quot;youremail&quot;
+# you will be prompted for a password - this is not your login password but a new password
+# you can use for unlocking your keypair</code></pre>
+<h1 id="setting-up-ssh-keys-for-passwordless-login">Setting up ssh keys for passwordless login</h1>
+<ol type="1">
+<li>Generates a ssh key pair on your laptop</li>
+<li>Need to copy ~/.ssh/id_rsa.pub to biocluster.ucr.edu</li>
+</ol>
+<pre class="shell"><code>[YOURLAPTOP] $ scp  ~/.ssh/id_rsa.pub YOURNAME@biocluster.ucr.edu:.ssh/mylaptopkey.pub
+[YOURLAPTOP] $ ssh YOURNAME@biocluster.ucr.edu
+[biocluster] $ cd .ssh
+[biocluster] $ cat mylaptopkey.pub &gt;&gt; authorized_keys2
+[biocluster] $ chmod 644 authorized_keys2
+[biocluster] $ logout
+$ ssh YOURNAME@biocluster.ucr.edu
+# should prompt you for your SSH key password</code></pre>
+<p>On your laptop enable local caching of the ssh key password by doing</p>
+<pre class="shell"><code>$ ssh-add
+password:
+$ ssh  YOURNAME@biocluster.ucr.edu
+# no password requested!</code></pre>
+<p>Can edit ~/.ssh/config to setup aliases, preset the user name and simplify</p>
+<pre class="plain"><code>$ cat ~/.ssh/config
+ForwardX11 yes
+ForwardX11Trusted yes
+ForwardAgent yes
+
+Host biocluster
+ Hostname biocluster.ucr.edu
+ User MYUSERNAME</code></pre>
+<p>Can just use <code>ssh biocluster</code> now instead of <code>ssh MYUSERNAME@biocluster.ucr.edu</code></p>
+<h1 id="using-public-ssh-keys">Using Public SSH keys</h1>
+<p>The public SSH keys from your laptop and one on biocluster can be uploaded to github for easier checkin / checkout authentication via SSH instead of HTTPS</p>
+</body>
+</html>

@@ -1,5 +1,5 @@
 
-[Syllabus](Syllabus 2019)
+[Syllabus](Resources/Syllabus)
 
 Resources
 * SSH keys
