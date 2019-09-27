@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="getting-started">Getting started</h1>
+<p>This class will emphasize UNIX skills to support doing genomics and evolutionary analysis with bioinformatics tools. There are many many tutorials and workshops out there. Many are available for free and linked here</p>
+<ul>
+<li><a href="https://datacarpentry.org/">Data Carpentry</a> and <a href="https://software-carpentry.org/">Software Carpentry</a> part of <a href="https://carpentries.org/">The Carpentries</a></li>
+<li><a href="https://dib-training.readthedocs.io/en/pub/">Data Intensive Biology training</a> like <a href="https://github.com/ngs-docs/2015-shell-genomics">Shell Genomics</a></li>
+<li><a href="https://github.com/crazyhottommy/getting-started-with-genomics-tools-and-resources">Getting Started with Genomics Tools</a></li>
+<li><a href="https://astrobiomike.github.io/unix/">Happy Belly Bioinformatics</a></li>
+</ul>
+<h1 id="logging-into-cluster">Logging into Cluster</h1>
+<p>You will need to have a terminal to get onto the system. On Mac that is called 'Terminal'. On Windows <a href="https://mobaxterm.mobatek.net/">MobaXTerm</a> is the best tool. Choose the 'Free' and 'Portable Version'.</p>
+<p>Existing documentation and tutorial available at http://hpcc.ucr.edu/ for using the HPCC.</p>
+<p>See the <a href="http://hpcc.ucr.edu/manuals_linux-basics_intro.html">Linux Basics</a></p>
+<p>To login to the cluster we need to use ssh client. This allows secure communication with the cluster. The UCR cluster is accessed using the host <code>cluster.hpcc.ucr.edu</code>.</p>
+<pre><code>$ ssh -X USERNAME@cluster.hpcc.ucr.edu</code></pre>
+<p>This will initiate a <a href="https://en.wikipedia.org/wiki/Unix">UNIX</a> session running on the cluster 'head node' by connecting through a secure connection. There are multiple machines which serve as this login node where we can stage our analysis to run on the worker nodes that are on the cluster so you may see different names like 'pelican', 'pigeon' when you log in each time. Much more detail on the setup of the cluster and resources available at http://hpcc.ucr.edu.</p>
+<p>You should now see a message as well as a prompt:</p>
+<pre><code>
+--------------------------------------------------------------------------------
+ University of California, Riverside - HPCC (High-Performance Computing Center)
+--------------------------------------------------------------------------------
+
+More information about HPCC and how to use the resources provided can
+be found at http://hpcc.ucr.edu/manuals_linux-cluster_intro.html
+
+Please send all questions and support requests to support@hpcc.ucr.edu
+
+Note: The default version of R is now 3.6.0
+--------------------------------------------------------------------------------
+
+username@pelican:~$</code></pre>
+<p>Let's setup some initial things. Make a SSH folder so we can copy thing over.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">hpcc</span>] $ mkdir ~/.ssh
+[<span class="ex">hpcc</span>] $ chmod 700 ~/.ssh <span class="co">#  sets the permission for this folder</span></code></pre></div>
+<p>You want to change your password on the cluster to something only you know. This is good practice since your password was emailed to you. It will prompt you for your current password and a new one.</p>
+<pre><code>[hpcc] $ passwd</code></pre>
+<p>You can log off by typing * <code>exit</code> * ^D (Control-D)</p>
+<p>The prompt on our system by default will start with the name of the computer as well as the current directory you are logged into. This prompt like most things on the system can be customized.</p>
+<pre><code>hostname:[directory]$</code></pre>
+<p>The <code>-X</code> option tells the system to <a href="https://kb.iu.edu/d/bdnt">forward your X11 connection</a> which is necessary for running interactive graphics (eg showing an image, running a graphical editor program like emacs)</p>
+<h1 id="the-command-line-interface-cli">The command line interface (CLI)</h1>
+<p>The command line provides ability to interact with the filesystem (files and folders) and run programs. A collection of UNIX utilities.</p>
+<h2 id="directories-and-files">Directories and files</h2>
+<p><strong>ls</strong> - list the files and folders in a directory. Options include <code>-l</code> to list with details (long). <code>-t</code> list ordered by time created (time). These can be combined as <code>ls -ls</code> or <code>ls -l -s</code>. Specify a folder to list other than the current directory with another argument <code>ls -l data</code>.</p>
+<p><strong>mkdir</strong> Create a directory. Give the <code>-p</code> option to create an necessary sub folders and also to not give warnings if a folder already exists.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">mkdir</span> test
+$ <span class="fu">mkdir</span> Alpha/Beta/Zeta <span class="co"># will give error</span>
+$ <span class="fu">mkdir</span> -p Alpha/Beta/Zeta <span class="co"># will not give error</span></code></pre></div>
+<p><strong><em>rmdir</em></strong> Remove a folder. Only works if folder is empty</p>
+<p><strong><em>rm</em></strong> Remove a file or folder. This is command to be careful with. To delete a folder that contains many folders.</p>
+<p><strong>more</strong> See the contents of a text file, one page at a time. Go to the next page with 'space'. Can search for a specific text with slash (<code>/</code>).</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">more</span> Gene_list.txt</code></pre></div>
+<p><strong>less</strong> See the contents of a text file, one page at a time. Less has <em>more</em> options than <strong>more</strong> with arrows which will let you navigate up and down pages and a search option - use the slash (<code>/</code>) and then type in a search text it will highlight all the options.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">less</span> Gene_list.txt</code></pre></div>
+<p><strong>head</strong> see the first lines in a file. By default this is 10 lines. But you can specify as many as you want with <code>-n LINES</code> option. Useful to get the beginning of a report or see what is the header in a spreadsheet file.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">head</span> -n 15 FILE.txt</code></pre></div>
+<p><strong>tail</strong> see the last lines in a file. By running this command can see the last 10 lines by default. Can specify number of lines with <code>-n LINES</code> option. Useful when looking at a log-file and want to see the last reported messages.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">tail</span> -n 12 FILE.txt</code></pre></div>
+<p><strong>echo</strong> Prints out messages.</p>
+<h2 id="logging-in-with-ssh-keys">Logging in with SSH keys</h2>
+<p>Let's make it simpler to login to the cluster without having to type our password all the time.</p>
+<p>Setup your SSH access on your computer (your laptop). Generate RSA key pair on your computer. It will ask you for a password. You get to pick any password here you can remember. This will be a different password from your cluster one.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">your</span> laptop] $ ssh-keygen -t rsa</code></pre></div>
+<p>See the new files created</p>
+<pre><code>[your laptop] $ ls ~/.ssh/
+[your laptop] $ id_rsa id_rsa.pub</code></pre>
+<p>Let's also configure how our ssh works by customizing the ssh config. We need to edit a text file. On OSX this can be with <code>vi</code>, <code>emacs</code>, <code>nano</code></p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">nano</span> ~/.ssh/config</code></pre></div>
+<p>```text ForwardX11 yes ForwardX11Trusted yes ForwardAgent yes</p>
+<p>Host hpcc Hostname cluster.hpcc.ucr.edu User YOURHPCCUSERNAME ServerAliveInterval 10 ```</p>
+<p>This will open up a window for editing. You should add this content to your file. Here's <a href="ssh-config_example.txt">a file you can copy onto the server too</a>. <code>scp ssh-config_example.txt YOURHPCCUSERNAME@cluster.hpcc.ucr.edu:.ssh</code></p>
+<h1 id="web-access-with-jupyter">Web Access with Jupyter</h1>
+<p>We will setup access to the cluster and support a notebook interfaceto the cluster.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">your</span> laptop] $ ssh cluster.hpcc.ucr.edu
+<span class="ex">sbatch</span> -p short /bigdata/gen220/shared/login/submit_jupyter.sh</code></pre></div>
+<h1 id="practice-steps.">Practice steps.</h1>
+<ol type="1">
+<li>Generate a new direction</li>
+</ol>
+</body>
+</html>
