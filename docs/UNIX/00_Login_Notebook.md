@@ -141,7 +141,7 @@ nano ~/.ssh/config
 ```
 
 
-```text
+```
 ForwardX11 yes
 ForwardX11Trusted yes
 ForwardAgent yes
@@ -165,10 +165,6 @@ We will setup access to the cluster and support a notebook interfaceto the clust
 [your laptop] $ ssh cluster.hpcc.ucr.edu
 sbatch -p short /bigdata/gen220/shared/login/submit_jupyter.sh
 ```
-
-
-
-
 
 
 # Practice steps.
