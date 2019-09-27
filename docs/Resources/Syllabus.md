@@ -27,6 +27,8 @@ Time and location: W 4:00-4:50PM, F 3:00-4:50PM, ULB104
 
 Office Hours: By Appointment, 1207K Genomics
 
+https://biodataprog.github.io/GEN220/
+
 Prerequisites
 -------------
 
@@ -63,7 +65,6 @@ Grading
 -------
 
 * Programming Homework assignments (5 in total): 50% of grade
-
 * Team project: 50% of grade
 
 Homework
@@ -118,4 +119,4 @@ Schedule
 | *Nov-29*	|	F	| *Thanksgiving Holiday* |		|
 | Dec-4	|	W	| Bioinformatics 7 - Phylogenentic analyses | HW5 Due |
 | Dec-6	|	F	|	Presentations	|	  |
-| Dec-? | ? | Extra Presentations | |
+| Dec-? | ? | Extra Presentations |  as needed |
