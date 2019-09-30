@@ -1,4 +1,4 @@
-%Syllabus for GEN220: High Throughput Biological Data Processing
+#Syllabus for GEN220: High Throughput Biological Data Processing
 
 Course Description
 ==================
