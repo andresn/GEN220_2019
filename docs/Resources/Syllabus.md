@@ -27,7 +27,7 @@ Time and location: W 4:00-4:50PM, F 3:00-4:50PM, ULB104
 
 Office Hours: By Appointment, 1207K Genomics
 
-https://biodataprog.github.io/GEN220/
+[https://biodataprog.github.io/GEN220/](https://biodataprog.github.io/GEN220/)
 
 Prerequisites
 -------------
