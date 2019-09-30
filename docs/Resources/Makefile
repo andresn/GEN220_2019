@@ -1,6 +1,6 @@
 MARKDOWN=pandoc --from markdown --standalone --indented-code-classes=python
 
-all: htmlall pdfall
+all: pdfall
 
 pdfall: $(patsubst %.md,%.pdf,$(wildcard *.md)) 
 
