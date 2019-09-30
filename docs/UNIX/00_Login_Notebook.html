@@ -96,35 +96,109 @@ username@pelican:~$</code></pre>
 $ <span class="fu">mkdir</span> Alpha/Beta/Zeta <span class="co"># will give error</span>
 $ <span class="fu">mkdir</span> -p Alpha/Beta/Zeta <span class="co"># will not give error</span></code></pre></div>
 <p><strong><em>rmdir</em></strong> Remove a folder. Only works if folder is empty</p>
-<p><strong><em>rm</em></strong> Remove a file or folder. This is command to be careful with. To delete a folder that contains many folders.</p>
+<p><strong><em>rm</em></strong> Remove a file or folder. This is command to be careful with. To delete a folder that contains many folders you can use.</p>
+<pre><code>rm -rf # USE WITH CAUTION, THIS WILL RECURSIVELY DELETE</code></pre>
+<p><strong><em>cd</em></strong> To navigate into a directory. Use this to go to different directories.</p>
+<ul>
+<li><code>cd dirname</code> - go to a directory</li>
+<li><code>cd /bigdata/gen220/shared</code> - can be an absolute path</li>
+<li><code>cd simple</code> - or a relative directory (eg the dir <code>simple</code> that is in the folder).</li>
+<li><code>cd ..</code> - go up a directory</li>
+<li><code>cd</code> or <code>cd ~</code> - go to the home directory</li>
+<li><code>cd -</code> - go to the last directory</li>
+</ul>
+<p><strong><em>pushd/popd</em></strong> - like cd but keep track of all the directories you were in.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">~</span>] $ <span class="bu">pushd</span> /bigdata/gen220
+[<span class="ex">/bigdata</span>/<span class="ex">gen220</span>] $ <span class="co"># now you are in a new directory</span>
+<span class="bu">pushd</span> /tmp
+[/<span class="ex">tmp</span>] $ <span class="co"># now you are in another directory</span>
+[/<span class="ex">tmp</span>] $ cd <span class="co"># go back to your home dir</span>
+[<span class="ex">~</span>] $ <span class="bu">popd</span>
+[/<span class="ex">tmp</span>] $ <span class="co"># you are now in last dir pushed on the stack</span>
+[/<span class="ex">tmp</span>] $ popd <span class="co"># will go back to last dir pushed on the stack</span>
+[<span class="ex">/bigdata</span>/<span class="ex">gen220</span>] $  # will go back to last dir pushed on the stack</code></pre></div>
+<p>This is different from <code>cd -</code> because it remembers the last directory you were in when you issued <code>pushd</code>. So you can use it like a bookmark to get you back to a specific place despite any of the other comamnds.</p>
+<p><strong><em>pwd</em></strong> Print the current working directory. Helpful to remember where you are.</p>
+<pre><code>pwd</code></pre>
+<p><strong><em>realpath</em></strong> Print out the full path to a file. If it is a symlink print out where the original file is located.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="bu">cd</span>  /bigdata/gen220/shared/simple
+$ <span class="fu">ls</span> -l
+<span class="ex">lrwxrwxrwx</span> 1 jstajich gen220    20 Sep 30 12:06 gene_names.txt -<span class="op">&gt;</span> yeast_gene_names.txt
+<span class="ex">-rw-r--r--</span> 1 jstajich gen220   603 Oct 10  2018 numbers_floating.dat
+<span class="ex">-rw-r--r--</span> 1 jstajich gen220 22447 Oct 10  2018 rice_random_exons.bed
+<span class="ex">-rw-rw-r--</span> 1 jstajich gen220 33894 Sep 30 12:05 yeast_gene_names.txt
+$ <span class="ex">realpath</span> yeast_gene_names.txt
+<span class="ex">/bigdata/gen220/shared/simple/yeast_gene_names.txt</span>
+$ <span class="ex">realpath</span> gene_names.txt
+<span class="ex">/bigdata/gen220/shared/simple/yeast_gene_names.txt</span></code></pre></div>
 <p><strong>more</strong> See the contents of a text file, one page at a time. Go to the next page with 'space'. Can search for a specific text with slash (<code>/</code>).</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">more</span> Gene_list.txt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">more</span> /bigdata/gen220/shared/simple/yeast_gene_names.txt</code></pre></div>
 <p><strong>less</strong> See the contents of a text file, one page at a time. Less has <em>more</em> options than <strong>more</strong> with arrows which will let you navigate up and down pages and a search option - use the slash (<code>/</code>) and then type in a search text it will highlight all the options.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">less</span> Gene_list.txt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">less</span> /bigdata/gen220/shared/simple/yeast_gene_names.txt</code></pre></div>
 <p><strong>head</strong> see the first lines in a file. By default this is 10 lines. But you can specify as many as you want with <code>-n LINES</code> option. Useful to get the beginning of a report or see what is the header in a spreadsheet file.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">head</span> -n 15 FILE.txt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="co"># here&#39;s an example that will work on the cluster</span>
+<span class="fu">head</span> -n 15 /bigdata/gen220/shared/simple/numbers_floating.dat</code></pre></div>
 <p><strong>tail</strong> see the last lines in a file. By running this command can see the last 10 lines by default. Can specify number of lines with <code>-n LINES</code> option. Useful when looking at a log-file and want to see the last reported messages.</p>
-<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="fu">tail</span> -n 12 FILE.txt</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">tail</span> -n 12 FILE.txt
+<span class="co"># here&#39;s an example that will work on the cluster</span>
+<span class="fu">tail</span> -n 3 /bigdata/gen220/shared/simple/numbers_floating.dat</code></pre></div>
 <p><strong>echo</strong> Prints out messages.</p>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="bu">echo</span> <span class="st">&quot;hello there&quot;</span>
+<span class="co"># if you want to use special characters like tab (\t) you need to specify -e when you run echo</span>
+<span class="bu">echo</span> -e <span class="st">&quot;Chrom\tStart\tEnd&quot;</span></code></pre></div>
 <h2 id="logging-in-with-ssh-keys">Logging in with SSH keys</h2>
-<p>Let's make it simpler to login to the cluster without having to type our password all the time.</p>
-<p>Setup your SSH access on your computer (your laptop). Generate RSA key pair on your computer. It will ask you for a password. You get to pick any password here you can remember. This will be a different password from your cluster one.</p>
+<p>Let's make it simpler to login to the cluster without having to type our password all the time. This is a <strong>ONE TIME CONFIGURATION</strong>, you don't need to do this every time you connect, you only will need to setup for your laptop to connect using these keys. These keys are also useful when we start using github to commit your code as it will also use this connection mechanism. If you are using an in-class laptop you'll need to keep using that same one over the course of the class or re-do this step.</p>
+<p>If you are using mobaxterm or other system that will SAVE your password then you really don't have to do this step for ssh keys for connecting (though it will still be useful for the github connecting).</p>
+<p>SSH-keys will allow you to setup connection to the server without having to use your server password each time. You can specify a key-pair that will work for your laptop to connect to the server.</p>
+<h3 id="setup-your-ssh-access-on-your-computer-your-laptop.">Setup your SSH access on your computer (your laptop).</h3>
+<p>Generate RSA key pair on your computer. It will ask you for a password. You get to pick any password here you can remember. This will be a different password from your cluster one.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">your</span> laptop] $ ssh-keygen -t rsa</code></pre></div>
 <p>See the new files created</p>
-<pre><code>[your laptop] $ ls ~/.ssh/
-[your laptop] $ id_rsa id_rsa.pub</code></pre>
+<div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">your</span> laptop] $ ls ~/.ssh/
+[<span class="ex">your</span> laptop] $ id_rsa id_rsa.pub</code></pre></div>
 <p>Let's also configure how our ssh works by customizing the ssh config. We need to edit a text file. On OSX this can be with <code>vi</code>, <code>emacs</code>, <code>nano</code></p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash"><span class="fu">nano</span> ~/.ssh/config</code></pre></div>
-<p>```text ForwardX11 yes ForwardX11Trusted yes ForwardAgent yes</p>
-<p>Host hpcc Hostname cluster.hpcc.ucr.edu User YOURHPCCUSERNAME ServerAliveInterval 10 ```</p>
-<p>This will open up a window for editing. You should add this content to your file. Here's <a href="ssh-config_example.txt">a file you can copy onto the server too</a>. <code>scp ssh-config_example.txt YOURHPCCUSERNAME@cluster.hpcc.ucr.edu:.ssh</code></p>
+<pre><code>ForwardX11 yes
+ForwardX11Trusted yes
+ForwardAgent yes
+
+Host hpcc
+ Hostname cluster.hpcc.ucr.edu
+ User YOURHPCCUSERNAME
+ ServerAliveInterval 10
+ ```
+
+ This will open up a window for editing. You should add this content to your file.
+ Here&#39;s [a file you can copy onto the server too](ssh-config_example.txt).
+ `scp ssh-config_example.txt YOURHPCCUSERNAME@cluster.hpcc.ucr.edu:.ssh`
+
+Now you need to copy your ssh key FROM your laptop TO the cluster.</code></pre>
+<p>[your laptop] $ scp ~/.ssh/id_rsa.pub YOURHPCCUSERNAME@cluster.hpcc.ucr.edu:.ssh/my_laptop_key.pub [your laptop] $ ssh ```</p>
 <h1 id="web-access-with-jupyter">Web Access with Jupyter</h1>
-<p>We will setup access to the cluster and support a notebook interfaceto the cluster.</p>
+<p>We will login and setup access to the cluster and support a notebook interface to the cluster. To do this you will end up needing to open two terminal windows. One where you will login to the cluster and run a job with sbatch. The other window you will do a login to the cluster, but that will support setting up what is called 'ssh tunnel'.</p>
+<p>You should run this command from one of your own directories eg. your Home directory.</p>
 <div class="sourceCode"><pre class="sourceCode bash"><code class="sourceCode bash">[<span class="ex">your</span> laptop] $ ssh cluster.hpcc.ucr.edu
-<span class="ex">sbatch</span> -p short /bigdata/gen220/shared/login/submit_jupyter.sh</code></pre></div>
+[<span class="ex">hpcc</span>] $ cd ~ <span class="co"># go to your home directory</span>
+[<span class="ex">hpcc</span>] $ batch -p short /bigdata/gen220/shared/login/submit_jupyter.sh</code></pre></div>
+<p>This will generate a file <code>jupyter-notebook-NNNNN.log</code> where the number is the job currently running. This number would have also been displayed when you submit the job with 'sbatch'. You can also view the status of your jobs with <code>squeue -u $USER</code>.</p>
+<p>Now that the job has started - read the log file jupyter-notebook-NNNNN.log</p>
+<p>It will say something like this</p>
+<pre><code>MacOS or linux terminal command to create your ssh tunnel:
+ssh -NL 8706:NODE:8706 USERNAME@cluster.hpcc.ucr.edu</code></pre>
+<p>Note the number of the ports (8706) will be different since it is randomly generated.</p>
+<p>ON MobaXTerm you can just run a command line ssh option at the bottom of the screen so you can copy that to run.</p>
+<p><strong>ON your mac/linux machine</strong> you will need to open a second terminal and copy and paste that ssh command exactly as it is in the file and run that. If you have not setup ssh keys you will need to put in your password again.</p>
+<p>Read the rest of the log file you will see a message</p>
+<pre><code>Copy/paste this URL into your browser when you connect for the first time,
+ to login with a token:
+http://NODE:8706/?token=a844e90f68c82...</code></pre>
+<p>This is an example - NODE will be filled in with the name of a specific computer name from the cluster (same as the one in the ssh command above). You need to REPLACE the text <em>NODE</em> above with <em>localhost</em> and put that into your web browser running on your laptop.</p>
 <h1 id="practice-steps.">Practice steps.</h1>
 <ol type="1">
-<li>Generate a new direction</li>
+<li>Generate a new directory</li>
+<li>Navigate into the directory</li>
+<li>How many lines are in the file <code>/bigdata/gen220/shared/simple/rice_random_exons.bed</code></li>
+<li>How many chromosomes are there listed (column 1)?</li>
 </ol>
 </body>
 </html>
