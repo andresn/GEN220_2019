@@ -89,38 +89,100 @@ $ mkdir -p Alpha/Beta/Zeta # will not give error
 
 ***rmdir*** Remove a folder. Only works if folder is empty
 
-***rm*** Remove a file or folder. This is command to be careful with. To delete a folder that contains many folders.
+***rm*** Remove a file or folder. This is command to be careful with. To delete a folder that contains many folders you can use.
+
+```
+rm -rf # USE WITH CAUTION, THIS WILL RECURSIVELY DELETE
+```
+
+***cd*** To navigate into a directory.  Use this to go to different directories.
+
+* `cd dirname` - go to a directory
+* `cd /bigdata/gen220/shared` - can be an absolute path
+* `cd simple` - or a relative directory (eg the dir `simple`  that is in the folder).
+* `cd ..` - go up a directory
+* `cd` or `cd ~` - go to the home directory
+* `cd -` - go to the last directory
+
+***pushd/popd*** - like cd but keep track of all the directories you were in.
+```bash
+[~] $ pushd /bigdata/gen220
+[/bigdata/gen220] $ # now you are in a new directory
+pushd /tmp
+[/tmp] $ # now you are in another directory
+[/tmp] $ cd # go back to your home dir
+[~] $ popd
+[/tmp] $ # you are now in last dir pushed on the stack
+[/tmp] $ popd # will go back to last dir pushed on the stack
+[/bigdata/gen220] $  # will go back to last dir pushed on the stack
+```
+This is different from `cd -` because it remembers the last directory you were in when you issued `pushd`. So you can use it like a bookmark to get you back to a specific place despite any of the other comamnds.
+
+***pwd*** Print the current working directory. Helpful to remember where you are.
+
+```
+pwd
+```
+
+***realpath*** Print out the full path to a file. If it is a symlink print out where the original file is located.
+
+```bash
+$ cd  /bigdata/gen220/shared/simple
+$ ls -l
+lrwxrwxrwx 1 jstajich gen220    20 Sep 30 12:06 gene_names.txt -> yeast_gene_names.txt
+-rw-r--r-- 1 jstajich gen220   603 Oct 10  2018 numbers_floating.dat
+-rw-r--r-- 1 jstajich gen220 22447 Oct 10  2018 rice_random_exons.bed
+-rw-rw-r-- 1 jstajich gen220 33894 Sep 30 12:05 yeast_gene_names.txt
+$ realpath yeast_gene_names.txt
+/bigdata/gen220/shared/simple/yeast_gene_names.txt
+$ realpath gene_names.txt
+/bigdata/gen220/shared/simple/yeast_gene_names.txt
+```
+
 
 **more** See the contents of a text file, one page at a time. Go to the next page with 'space'. Can search for a specific text with slash (`/`).
 
 ```bash
-$ more Gene_list.txt
+$ more /bigdata/gen220/shared/simple/yeast_gene_names.txt
 ```
 
 **less** See the contents of a text file, one page at a time. Less has *more* options than **more** with arrows which will let you navigate up and down pages and a search option - use the slash (`/`) and then type in a search text it will highlight all the options.
 
 ```bash
-$ less Gene_list.txt
+$ less /bigdata/gen220/shared/simple/yeast_gene_names.txt
 ```
 
 
 **head** see the first lines in a file. By default this is 10 lines. But you can specify as many as you want with `-n LINES` option.   Useful to get the beginning of a report or see what is the header in a spreadsheet file.
 ```bash
-$ head -n 15 FILE.txt
+# here's an example that will work on the cluster
+head -n 15 /bigdata/gen220/shared/simple/numbers_floating.dat
 ```
 
 **tail** see the last lines in a file.  By running this command can see the last 10 lines by default. Can specify number of lines with `-n LINES` option.  Useful when looking at a log-file and want to see the last reported messages.
 ```bash
-$ tail -n 12 FILE.txt
+tail -n 12 FILE.txt
+# here's an example that will work on the cluster
+tail -n 3 /bigdata/gen220/shared/simple/numbers_floating.dat
+
 ```
 
 **echo** Prints out messages.
+```bash
+echo "hello there"
+# if you want to use special characters like tab (\t) you need to specify -e when you run echo
+echo -e "Chrom\tStart\tEnd"
+```
 
 ## Logging in with SSH keys
 
-Let's make it simpler to login to the cluster without having to type our password all the time.
+Let's make it simpler to login to the cluster without having to type our password all the time. This is a **ONE TIME CONFIGURATION**, you don't need to do this every time you connect, you only will need to setup for your laptop to connect using these keys. These keys are also useful when we start using github to commit your code as it will also use this connection mechanism. If you are using an in-class laptop you'll need to keep using that same one over the course of the class or re-do this step.
 
-Setup your SSH access on your computer (your laptop).
+If you are using mobaxterm or other system that will SAVE your password then you really don't have to do this step for ssh keys for connecting (though it will still be useful for the github connecting).
+
+SSH-keys will allow you to setup connection to the server without having to use your server password each time. You can specify a key-pair that will work for your laptop to connect to the server.
+
+### Setup your SSH access on your computer (your laptop).
 Generate RSA key pair on your computer. It will ask you for a password. You get to pick any password here you can remember. This will be a different password from your cluster one.
 
 ```bash
@@ -128,7 +190,7 @@ Generate RSA key pair on your computer. It will ask you for a password. You get 
 ```
 
 See the new files created
-```
+```bash
 [your laptop] $ ls ~/.ssh/
 [your laptop] $ id_rsa id_rsa.pub
 ```
@@ -139,7 +201,6 @@ edit a text file. On OSX this can be with `vi`, `emacs`, `nano`
 ```bash
 nano ~/.ssh/config
 ```
-
 
 ```
 ForwardX11 yes
@@ -156,17 +217,50 @@ Host hpcc
  Here's [a file you can copy onto the server too](ssh-config_example.txt).
  `scp ssh-config_example.txt YOURHPCCUSERNAME@cluster.hpcc.ucr.edu:.ssh`
 
-
-# Web Access with Jupyter
-
-We will setup access to the cluster and support a notebook interfaceto the cluster.
-
-```bash
-[your laptop] $ ssh cluster.hpcc.ucr.edu
-sbatch -p short /bigdata/gen220/shared/login/submit_jupyter.sh
+Now you need to copy your ssh key FROM your laptop TO the cluster.
+```
+[your laptop] $ scp ~/.ssh/id_rsa.pub YOURHPCCUSERNAME@cluster.hpcc.ucr.edu:.ssh/my_laptop_key.pub
+[your laptop] $ ssh
 ```
 
 
+# Web Access with Jupyter
+
+We will login and setup access to the cluster and support a notebook interface to the cluster. To do this you will end up needing to open two terminal windows. One where you will login to the cluster and run a job with sbatch. The other window you will do a login to the cluster, but that will support setting up what is called 'ssh tunnel'.
+
+You should run this command from one of your own directories eg. your Home directory.
+```bash
+[your laptop] $ ssh cluster.hpcc.ucr.edu
+[hpcc] $ cd ~ # go to your home directory
+[hpcc] $ batch -p short /bigdata/gen220/shared/login/submit_jupyter.sh
+```
+
+This will generate a file `jupyter-notebook-NNNNN.log` where the number is the job currently running. This number would have also been displayed when you submit the job with 'sbatch'. You can also view the status of your jobs with `squeue -u $USER`.
+
+Now that the job has started - read the log file jupyter-notebook-NNNNN.log
+
+It will say something like this
+```
+MacOS or linux terminal command to create your ssh tunnel:
+ssh -NL 8706:NODE:8706 USERNAME@cluster.hpcc.ucr.edu
+```
+Note the number of the ports (8706) will be different since it is randomly generated.
+
+ON MobaXTerm you can just run a command line ssh option at the bottom of the screen so you can copy that to run.
+
+**ON your mac/linux machine** you will need to open a second terminal and copy and paste that ssh command exactly as it is in the file and run that. If you have not setup ssh keys you will need to put in your password again.
+
+Read the rest of the log file you will see a message
+```
+Copy/paste this URL into your browser when you connect for the first time,
+ to login with a token:
+http://NODE:8706/?token=a844e90f68c82...
+```
+This is an example - NODE will be filled in with the name of a specific computer name from the cluster (same as the one in the ssh command above). You need to REPLACE the text *NODE* above with *localhost* and put that into your web browser running on your laptop.
+
 # Practice steps.
 
-1. Generate a new direction
+1. Generate a new directory
+2. Navigate into the directory
+3. How many lines are in the file `/bigdata/gen220/shared/simple/rice_random_exons.bed`
+4. How many chromosomes are there listed (column 1)?
