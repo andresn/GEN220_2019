@@ -1,6 +1,6 @@
 #Syllabus for GEN220: High Throughput Biological Data Processing
 
-Course Description
+##Course Description
 ==================
 
 This course focuses on computational skills for processing data using
@@ -13,7 +13,7 @@ today is to analyze large amount of biological data. The objective of
 this course is to provide an opportunity for graduate students with no
 computer science background to learn the basic skills of handling high
 throughput biological data. It covers the Linux/Unix environment and
-the importance of the command line interface; the Python programming
+the importance of the com1mand line interface; the Python programming
 language; program design, implementation, and testing; BioPython;
 Strategies for analyzing genome resequencing, RNASeq, sequencing data.
 Students build hands-on skills by analyzing real high throughput
@@ -29,12 +29,12 @@ Office Hours: By Appointment, 1207K Genomics
 
 [https://biodataprog.github.io/GEN220/](https://biodataprog.github.io/GEN220/)
 
-Prerequisites
+##Prerequisites
 -------------
 
 * Coursework in genetics or molecular biology or permission of instructor
 
-Resources
+##Resources
 ---------
 
 None of these texts are required for completion of the course but they
@@ -61,13 +61,13 @@ improve your ability to master UNIX or Programming in Python.
    6. Berk Ekmekci, Charles E. McAnany, Cameron Mura. An Introduction to Programming for Bioscientists: A Python-Based Primer. PLoS Comp Bio. DOI: [10.1371/journal.pcbi.1004867](https://doi.org/10.1371/journal.pcbi.1004867)
 
 
-Grading
+##Grading
 -------
 
 * Programming Homework assignments (5 in total): 50% of grade
 * Team project: 50% of grade
 
-Homework
+##Homework
 --------
 
 * Homework is due before class on the date listed in the syllabus or if amended when assignment is given.
@@ -80,7 +80,7 @@ Homework
   one private personal repository to deposit and should organize a
   folder for each homework assignment (e.g. hw1, hw2, hw3).
 
-Projects
+##Projects
 --------
 
 * Project Topics will be discussed in October and teams will select a project idea to focus on.
@@ -94,7 +94,8 @@ Projects
 * The report needs to detail what each person's contribution is to the
   project.
 
-Schedule
+##Schedule
+
 ----------
 | Date	| Day |	Lecture Topic	|	Notes
 | :------ | :---- | :---------------------- | :------------ |
@@ -120,3 +121,4 @@ Schedule
 | Dec-4	|	W	| Bioinformatics 7 - Phylogenentic analyses | HW5 Due |
 | Dec-6	|	F	|	Presentations	|	  |
 | Dec-? | ? | Extra Presentations |  as needed |
+----------
