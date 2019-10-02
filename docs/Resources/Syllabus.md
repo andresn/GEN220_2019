@@ -1,6 +1,6 @@
-#Syllabus for GEN220: High Throughput Biological Data Processing
+Syllabus for GEN220: High Throughput Biological Data Processing
 
-##Course Description
+Course Description
 ==================
 
 This course focuses on computational skills for processing data using
@@ -29,12 +29,11 @@ Office Hours: By Appointment, 1207K Genomics
 
 [https://biodataprog.github.io/GEN220/](https://biodataprog.github.io/GEN220/)
 
-##Prerequisites
+Prerequisites
 -------------
-
 * Coursework in genetics or molecular biology or permission of instructor
 
-##Resources
+Resources
 ---------
 
 None of these texts are required for completion of the course but they
@@ -61,13 +60,13 @@ improve your ability to master UNIX or Programming in Python.
    6. Berk Ekmekci, Charles E. McAnany, Cameron Mura. An Introduction to Programming for Bioscientists: A Python-Based Primer. PLoS Comp Bio. DOI: [10.1371/journal.pcbi.1004867](https://doi.org/10.1371/journal.pcbi.1004867)
 
 
-##Grading
+Grading
 -------
 
 * Programming Homework assignments (5 in total): 50% of grade
 * Team project: 50% of grade
 
-##Homework
+Homework
 --------
 
 * Homework is due before class on the date listed in the syllabus or if amended when assignment is given.
@@ -80,7 +79,7 @@ improve your ability to master UNIX or Programming in Python.
   one private personal repository to deposit and should organize a
   folder for each homework assignment (e.g. hw1, hw2, hw3).
 
-##Projects
+Projects
 --------
 
 * Project Topics will be discussed in October and teams will select a project idea to focus on.
@@ -94,7 +93,8 @@ improve your ability to master UNIX or Programming in Python.
 * The report needs to detail what each person's contribution is to the
   project.
 
-##Schedule
+Schedule
+--------
 
 ----------
 | Date	| Day |	Lecture Topic	|	Notes
