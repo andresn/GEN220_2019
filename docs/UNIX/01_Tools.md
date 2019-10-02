@@ -298,7 +298,7 @@ Can also be used on folders to summarize the total size of contents of a folder.
 
 # Running programs
 
-The pipe operator | allows you to instead of redirecting output to a file, redirect it to another program. Specifically the STDIN of the other program. This is very powerful and allows you to chain together different processes
+The pipe operator `|` allows you to instead of redirecting output to a file, redirect it to another program. Specifically the STDIN of the other program. This is very powerful and allows you to chain together different processes
 
 ```bash
 $ zcat data/Nc20H.expr.tab.gz | wc -l
