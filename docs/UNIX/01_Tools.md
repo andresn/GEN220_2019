@@ -330,3 +330,100 @@ $ zcat data/blast.out.gz | awk '{print $1}' | sort | uniq | wc -l
 $ blastn -query query.fa -db db.fa -outfmt 6 | gzip -c > blastresult.gz
 ```
 
+# Using the HPCC cluster
+
+On Biocluster there are a couple of folder structures to understand
+
+* `/rhome/USERNAME` your home directory - limited space (20gb)
+* `/bigdata/labname/USERNAME` your 'bigdata' folder (bigger space (100gb+)
+* `/bigdata/labname/shared` shared folder space for your lab
+
+Currently everyone is in the the gen220 'lab' during this course so
+you have access to `/bigdata/gen220/shared` and `/bigdata/gen220/USERNAME`
+
+How much data am I using currently: https://dashboard.hpcc.ucr.edu
+
+/scratch - local space on a cluster node which is FAST disk access but temporary (30 days)
+
+## Transferring data
+
+Graphical tools:
+Filezilla - https://filezilla-project.org/download.php
+
+Command-line:
+```bash
+# interactive FTP client
+$ sftp USERNAME@biocluster.ucr.edu
+# copy a file
+$ scp USERNAME@biocluster.ucr.edu:fileoncluster.txt ./file-on-your-machine.txt
+# copy a folder, recursively
+$ scp -r USERNAME@biocluster.ucr.edu:/bigdata/gen220/shared/simple .
+# rsync copies, but can check and only copy changed files
+$ rsync -a --progress USERNAME@biocluster.ucr.edu:/bigdata/gen220/shared/simple .
+# copy FROM your computer TO the cluster, swap order - here
+# copy a folder back to your HOME directory
+$ scp -r simple USERNAME@biocluster.ucr.edu:
+```
+
+## Submitting jobs
+
+Currently only shown login to the main "head" node (cluster.hpcc.ucr.edu)
+
+To use the 6500 CPUs we need to submit job for running. This is called
+a job management or queueing system.
+
+We use SLURM on the UCR system currently.
+
+We use the SLURM queuing systems on HPCC. Read info here for more resources.
+http://hpcc.ucr.edu/manuals_linux-cluster_jobs.html
+
+Getting an interactive shell (eg get your own CPU to do work on)
+
+```bash
+$ srun --pty bash -l
+$ srun --nodes 1 --ntasks 2 --mem 8gb --time 8:00:00 --pty bash -l
+```
+
+now you can type this in on the cmdline:
+```bash
+module load ncbi-blast
+module load db-ncbi
+curl https://www.uniprot.org/uniprot/Q5T6X5.fasta > Q5T6X5.fasta
+blastp -num_threads 2 -query Q5T6X5.fasta  -db swissprot -out result.blastp
+```
+
+
+### Batch/non-interactive job
+
+You can also make this a job script (call it job.sh)
+```
+#!/bin/bash
+module load ncbi-blast
+module load db-ncbi
+curl https://www.uniprot.org/uniprot/Q5T6X5.fasta > Q5T6X5.fasta
+blastp -num_threads 2 -query Q5T6X5.fasta  -db swissprot -out result.blastp
+```
+
+Submit it with the following options
+
+```
+$ sbatch -N 1 -n 2 -p short job.sh
+```
+
+Requesting job resources
+
+* number of CPUs: --ntasks N OR -n
+* memory: --mem Xgb
+* runtime: --time 12:00:00
+* outputfile: --out results.log
+
+Can also set these INSIDE the script
+
+```
+#!/bin/bash
+#SBATCH --nodes 1 --ntasks 2 --mem 2gb --time 2:00:00
+module load ncbi-blast
+module load db-ncbi
+curl https://www.uniprot.org/uniprot/Q5T6X5.fasta > Q5T6X5.fasta
+blastp -num_threads 2 -query Q5T6X5.fasta  -db swissprot -out result.blastp
+```
