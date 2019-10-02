@@ -44,7 +44,7 @@ improve your ability to master UNIX or Programming in Python.
       with Open Source Tools_. Vince Buffalo. 2015 O'Reilly &
       Associates. Available from [O'Reilly and Associates](http://shop.oreilly.com/product/0636920030157.do),
       [Amazon](http://amazon.com/Bioinformatics-Data-Skills-Reproducible-Research/dp/1449367372)
-
+      Free to read on UCR network (or use VPN) - [Safari link](http://uclibs.org/PID/277903).
    2. _Unix and Perl to the Rescue: A Primer_. Keith Bradnam and Ian
       Korf. [Unix and Perl Primer for Biologists](http://korflab.ucdavis.edu/unix_and_Perl/)
 
