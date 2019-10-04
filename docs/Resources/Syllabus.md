@@ -63,7 +63,7 @@ improve your ability to master UNIX or Programming in Python.
 Grading
 -------
 
-* Programming Homework assignments (5 in total): 50% of grade
+* Programming Homework assignments (4 in total): 50% of grade
 * Team project: 50% of grade
 
 Homework
@@ -77,7 +77,7 @@ Homework
 * Code should be runnable as turned in. You will deposit your code in
   your github repository or if not possible, by iLearn. You can make
   one private personal repository to deposit and should organize a
-  folder for each homework assignment (e.g. hw1, hw2, hw3).
+  folder for each homework assignment (e.g. hw1, hw2, hw3, hw4).
 
 Projects
 --------
@@ -96,29 +96,28 @@ Projects
 Schedule
 --------
 
-----------
 | Date	| Day |	Lecture Topic	|	Notes
 | :------ | :---- | :---------------------- | :------------ |
 | Sep-27 |	F	|	Course Intro / UNIX I: Cmdline, GitHub	|	|
 | Oct-2	|	W	|	UNIX II: Biocluster HPCC, Running programs |	|
-| Oct-4	|	F	|	UNIX III: Tools for data processing	| HW1 Due |
+| Oct-4	|	F	|	UNIX III: Tools for data processing	| HW1 Assigned |
 | Oct-9	|	W	|	UNIX IV: Advanced UNIX and data processing	|	|
 | Oct-11	|	F	|	Python 1 - Variables, running, cmdline, strings, math	|  |
-| Oct-16	|	W	|	Python 2 - Logic, loops, lists, iterator	|	|
-| Oct-18	|	F	|	Python 3 - I/O reading/writing files, directories	| HW2 Due |
+| Oct-16	|	W	|	Python 2 - Logic, loops, lists, iterator	|	HW1 Due |
+| Oct-18	|	F	|	Python 3 - I/O reading/writing files, directories	| HW2 Assigned |
 | Oct-23	|	W	|	Python 4 - Dictionaries, Arrays, functions |	|
 | Oct-25	|	F	|	Python 5 - Structured data (CSV, XML, GFF, BED)	| 	|
-| Oct-30	|	W	|	Python 6 - Panda, BioPython	|	|
-| Nov-1	|	F	|	Alignment and Bioinformatics Algorithms	| HW3 Due	|
+| Oct-30	|	W	|	Python 6 - Panda, BioPython	| HW2 Due	|
+| Nov-1	|	F	|	Alignment and Bioinformatics Algorithms	| HW3 Assigned	|
 | Nov-6	|	W	|	Bioinformatics 1 - BLAST, cmdline & automation	|	|
 | Nov-8 |	F	|	Bioinformatics 2 - Aligning short reads, coverage, identifying variants	|	|
-| Nov-13	|	W	|	Bioinformatics 3 - Genome Assembly 	| |
-| Nov-15 |	F	|	Data Plotting and R graphics  |	HW4 Due |
+| Nov-13	|	W	|	Bioinformatics 3 - Genome Assembly 	| HW3 Due |
+| Nov-15 |	F	|	Data Plotting and R graphics  |	HW4 Assigned |
 | Nov-20	|	W	| Bioinformatics 4 - RNASeq analyses  |	|
 | Nov-22	|	F	|	Bioinformatics 5  - Protein Sequence analyses |	|
-| Nov-27	|	W	| Bioinformatics 6  - Microbiome |	|
+| Nov-27	|	W	| Bioinformatics 6  - Microbiome | HW4 Due	|
 | *Nov-29*	|	F	| *Thanksgiving Holiday* |		|
-| Dec-4	|	W	| Bioinformatics 7 - Phylogenentic analyses | HW5 Due |
+| Dec-4	|	W	| Bioinformatics 7 - Phylogenentic analyses |  |
 | Dec-6	|	F	|	Presentations	|	  |
 | Dec-? | ? | Extra Presentations |  as needed |
 ----------
