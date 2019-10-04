@@ -3,5 +3,5 @@
 # Author
 Jason Stajich - Jason.Stajich[At]UCR.edu
 
-2019 - Fall course
+2019 - Fall course - http://biodataprog.github.io/GEN220
 
