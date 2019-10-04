@@ -16,6 +16,10 @@ Major Topic Areas
 * [Bioinformatics](Bioinfomatics) analysis methods
 * Editors [VIM/VI](http://hpcc.ucr.edu/manuals_linux-basics_vim.html) [Nano](https://www.howtogeek.com/howto/42980/the-beginners-guide-to-nano-the-linux-command-line-text-editor/) [Emacs](https://www.gnu.org/software/emacs/tour/) [Emacs Manual](https://www.gnu.org/software/emacs/manual/html_node/emacs/index.html)
 
+# Homework
+
+* HW1 - [Homework 1](Assignments/HW1) [PDF](Assignments/HW1.pdf)
+
 # Lectures
 
 * 0 & 1 [Course Intro / UNIX I: Cmdline](UNIX/00_Login_Notebook) [PDF](UNIX/00_Login_Notebook.pdf)
