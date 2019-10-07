@@ -89,6 +89,27 @@ else
 fi
 ```
 
+## Really useful testing options
+
+`-f` - if the variable is a file and exists
+`-s` - if file exists and is not zero
+`-d` - if the variable is a directory
+
+`-z` - if variable is empty
+
+```bash
+if [ ! -f $file1 ]; then
+ echo "file $file1 does NOT exist"
+fi
+
+if [ -z $var1 ]; then
+ echo "variable $var1 is empty"
+fi
+
+if [ -s $file2 ]; then
+ echo "file $file2 exists and is not empty"
+fi
+
 ## Loops
 
 Loops are important components for iterating through data.  For loops we can specify a list to go through
