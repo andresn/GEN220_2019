@@ -26,4 +26,4 @@ Major Topic Areas
 * 0 & 1 [Course Intro / UNIX I: Cmdline](UNIX/00_Login_Notebook) [PDF](UNIX/00_Login_Notebook.pdf)
 * 2 [UNIX 2: Running Tools](UNIX/01_Tools) [PDF](UNIX/01_Tools.pdf)
 * 3 [UNIX 3: Analysis and Programming](UNIX/02_Analysis_summary) [PDF](UNIX/02_Analysis_summary.pdf)
-* 4 [UNIX 4: UNIX Reminders](UNIX/03_Wrapup_and_Tools) [PDF](UNIX/03_Wrapup_and_Tools.pdf)
+* 4 [UNIX 4: Misc Tricks](UNIX/03_Wrapup_and_Tools) [PDF](UNIX/03_Wrapup_and_Tools.pdf)
