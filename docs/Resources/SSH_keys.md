@@ -17,8 +17,8 @@ Setting up ssh keys for passwordless login
 [YOURLAPTOP] $ scp  ~/.ssh/id_rsa.pub YOURNAME@biocluster.ucr.edu:.ssh/mylaptopkey.pub
 [YOURLAPTOP] $ ssh YOURNAME@biocluster.ucr.edu
 [biocluster] $ cd .ssh
-[biocluster] $ cat mylaptopkey.pub >> authorized_keys2
-[biocluster] $ chmod 644 authorized_keys2
+[biocluster] $ cat mylaptopkey.pub >> authorized_keys
+[biocluster] $ chmod 644 authorized_keys
 [biocluster] $ logout
 $ ssh YOURNAME@biocluster.ucr.edu
 # should prompt you for your SSH key password
@@ -53,3 +53,5 @@ Using Public SSH keys
 The public SSH keys from your laptop and one on biocluster can be
 uploaded to github for easier checkin / checkout authentication via
 SSH instead of HTTPS
+
+Use this public key (`id_rsa.pub`) to your github account https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account. Note that you can create multiple keys and have one pair for your laptop and another for HPCC. All of them can be added to github to enable check outs.
