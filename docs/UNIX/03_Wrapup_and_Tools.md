@@ -1,3 +1,4 @@
+# Odds and Ends
 
 # GZIP
 
@@ -16,9 +17,9 @@ $ gunzip file.fa.gz
 file.fa
 ```
 
-# Searching for text
+# Searching for text with grep
 
-Powerful pattern seaching with grep
+Powerful pattern seaching with `grep`
 
 Simple search for a text string:
 ```bash
@@ -72,5 +73,3 @@ $ grep -c Chr1, /bigdata/gen220/shared/data-examples/examples/random_exons.csv
 $ grep -v -c Chr1, /bigdata/gen220/shared/data-examples/examples/random_exons.csv
 25
 ```
-
-
