@@ -73,3 +73,42 @@ $ grep -c Chr1, /bigdata/gen220/shared/data-examples/examples/random_exons.csv
 $ grep -v -c Chr1, /bigdata/gen220/shared/data-examples/examples/random_exons.csv
 25
 ```
+
+# Git and Github
+
+Version control
+
+## Creating Github Account
+
+## Preparing Homework
+
+## Setting up a repository
+
+## Checking out code
+
+## Making changes
+
+Edit changes locally
+
+## Git add
+
+Need to tell Git which files you want to track. This is done with `add`
+```bash
+$ git add file1.sh file2.sh data/dat.tab
+```
+
+## Git commit
+
+To save the changes in the repository you need to commit them. This commit is accompanied by a message with `-m` option
+
+```bash
+$ git commit -m "A helpful message"
+```
+
+If you forget to include a message it will prompt you
+```bash
+$ git commit
+# will spawn an editor for you to write a message
+```
+
+
