@@ -16,7 +16,7 @@ To run code for python we will do
  python myscript.py
 ```
 
-#A first script
+## A first script
 
 Here's a text file that is called 'hello.py' and contains the following. This would be the content of a text file we called `hello.py`.
 
@@ -31,7 +31,7 @@ $ python hello.py > message.txt  # can redirect the output
 $ cat message.txt
 hello world
 ```
-# The Python interpreter
+## The Python interpreter
 
 The Python interpreter is a program we run, giving it a file or
 script which specifies the actions for it to take.
@@ -49,113 +49,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 hello world
 ```
 
-#Documentation and Comments
-
-Comment lines start with a '#'
-
-There are also othe self-documentation feature to make it easy
-to generate readable documention for web or other sites. These
-are flanked with three double quotes like
-
-```python
-"""Documentation here"""      
-# can also be on multiple lines
-"""This message could be concise, on multiple lines, and
-later I could tell you more about
-my program or function"""
-```
-
-#Python version 3
-
-There is a "new" (released 2009) version of Python. Some syntax
-differences and the way that lists and some operators work is
-different, but very similar syntax.
-
-The default python on HPCC is python version 2 BUT you can easily switch to default python 3 by doing this. I in fact have added these lines to my ~/.bashrc and they are the default when I log in.
-
-```
-module unload miniconda2
-module load miniconda3
-```
-
-* What's different 3.0 vs 2.0 - https://docs.python.org/3.0/whatsnew/3.0.html
-* What's new in 3.6?  - https://docs.python.org/3/whatsnew/3.6.html 
-
-```python
-$ module switch python/3
-$ python3
-Python 3.6.0 (default, Jan 30 2017, 17:43:08)
-[GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux
-Type "help", "copyright", "credits" or "license" for more information.
->>> print "hello world"
-File "<stdin>", line 1
-print "hello world"
-                ^
-SyntaxError: Missing parentheses in call to 'print'
->>> print( "hello world")
-hello world
-```
-
-# Resources reminder
-
-The [Software Carpentry Python Tutorial](https://swcarpentry.github.io/python-novice-inflammation/) Is a useful place to start.
-
-#Let's do Some math with the interpreter
-
-Can run python just by typing on cmdline `python`.  This brings up an interactive session.
-
-You can also use the iPython/Jupyter notebooks for web-based
-interactive session - see the section at end of [lecture
-1](https://biodataprog.github.io/GEN220/UNIX/00_Login_Notebook) on
-"Web Access with Jupyter".
-
-```python
->>> 3+10
-13
->>> 33/13
-2
->>> 33/13.0
-2.5384615384615383
->>> 2**10   # 2^10
-1024
->>> (909+951) / 2.0 # Parenthees make a difference
-930
->>> 909+951/2.0
-1384      
-```
-
-# Modules: for Math
-
-Python has the concept of modules or libraries that contain routines
-we can re-use. We will spend more time on the types of modules that
-exist (the list is vast!). Using the
-[math](https://docs.python.org/3/library/math.html) module which
-defines many routines.
-
-```python
->>> sqrt(9)
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-NameError: name 'sqrt' is not defined
->>> import math
->>> math.sqrt(9)
-3
->>> math.pow(2,10)
-1024.0
->>> 33/13.0
-2.5384615384615383
->>> math.ceil(33/13.0) # round up
-3.0
->>> math.floor(33/13.0) # round down
-2.0
->>> round(2.2) # round works as you expect for rounding (&lt;.5)
-2.0
->>> round(2.6) # round works as you expect for rounding (&gt;=.5)
-3.0
-```
-
-
-# Other math capabilities
+ Other math capabilities
 
 The % operator is modulus - it means return the remainder after
 dividing by the number. It is useful to see if something divides
@@ -177,7 +71,7 @@ to see if it will translate -- is the length/value mod 3 == 0 -
 means it is divisible perfectly by 3.
 
 
-# Strings in Python
+## Strings in Python
 
 Quotes can define the different special characters and use of strings
 
@@ -194,7 +88,7 @@ Quotes can define the different special characters and use of strings
 'concatenate these together'
 ```      
 
-# Variables
+## Variables
 
 Data can be assigned to variables. Variables don't exist until they
 are declared.
@@ -221,7 +115,7 @@ NameError: name 'e' is not defined
 156
 ```      
 
-# String functions
+## String functions
 
 Documented well in the python
 [string](https://docs.python.org/3/library/string.html?highlight=string)
@@ -314,7 +208,7 @@ list
 ['apple', 'fz', 'no', 'zf']
 ```     
 
-# Using split to parse strings into lists
+## Using split to parse strings into lists
 
 Starting with strings containing several parts which encode
 information you want.
@@ -350,7 +244,7 @@ print(symbolset[1].split("=")[1])
 'AAPL'
 ```
 
-# `repr` function to display an object/string/number
+## `repr` function to display an object/string/number
 
 ```python
 # use repr to print out literally the string
@@ -392,7 +286,7 @@ print("%-5s %5s %20s."%(n[0],n[1],n[2]))
 1         2            oh my god.
 
 
-# Print out with placeholders
+## Print out with placeholders
 
 The format is first a __formatting__ string which contains
 symbols `{}`. These `{}` are replaced, in order, by the items
@@ -410,7 +304,11 @@ a (15) + b (41) = 56
 ```
 
 
-# Can also use `rjust` and `ljust` to right or left justify a string in place
+## Format strings with rjust and ljust
+
+This is less typical usage.
+
+Can also use `rjust` and `ljust` to right or left justify a string in place
 ```python
 >>> n = [1, 2, 'oh my god']
 >>> print(n)
@@ -430,4 +328,73 @@ AttributeError: 'int' object has no attribute 'rjust'
     1     2 oh my god
 ```
 
+## String joining and appending
 
+Strings can be appended with the `+` opeator.
+
+```python
+left = "Sun"
+right = "Fish"
+
+print(left + "-" + right)
+
+right = "Shine"
+print(left + "-" + right)
+```
+
+The `*` operator followed by a number will just repeat a string that number of times.
+```python
+print("Do you want to volunteer for the mosquito trial?: ", "No "*10)
+```
+
+Can be useful for generating runs of single letters eg.
+```python
+seq1="AAGAGTCA"
+seq2="TTGATAG"
+print(seq1 + "N"*100"+seq2)
+```
+
+## Case study
+
+You can make strings upper or lower case with `string.upper()` and `string.lower()`.
+
+```python
+bases="GGATAGAaattaNGGT"
+print(bases.upper())
+print(bases.lower())
+```
+
+
+## Practice processing strings
+
+Let's initialize some data and process it.
+
+
+```python
+# make a string
+codestr= "17,20,30,12,5,6,19,13"
+# split it into an array
+dat=codestr.split(",")
+# print the first item
+print(dat[0])
+# print the sum of the 2nd and 3rd items
+# this won't work because they are strings
+#print(dat[1]+dat[2])
+print(int(dat[1]) + int(dat[2]) )
+# print the summation of the whole dataset
+# this won't work because it is an array of strings
+#print(sum(dat))
+intarray = [ int(x) for x in dat]
+print("total sum is: ",sum(intarray))
+
+# make a new array from the 3rd and 6th columns
+newarray=[dat[2],dat[5]]
+# print the new array
+print("the new array is ",newarray)
+
+# make a new string from the array contents
+# sort the array
+intarraysort = sorted(intarray)
+# convert items to a string and then join together
+print(",".join([str(x) for x in intarraysort]))
+```
