@@ -186,26 +186,31 @@ will report how long it is. `max()` will report the largest number in a
 list
 
 ```python
->>> sum(l)
-20
->>> len(l)
-4
->>> max(l)
-10
+sum(l)
+# prints
+# 20
+len(l)
+# prints
+# 4
+max(l)
+# prints
+# 10
 ```
 
 # Sorting lists
 
 
 ```python
->>> l = [10,3,17,4]
->>> l.sort()
->>> l
-[3, 4, 10, 17]      
->>> ls = ['zf','fz','no','apple']
->>> ls.sort()
->>> print(ls)
-['apple', 'fz', 'no', 'zf']
+l = [10,3,17,4]
+l.sort()
+l
+# prints
+#[3, 4, 10, 17]      
+ls = ['zf','fz','no','apple']
+ls.sort()
+print(ls)
+# prints
+#['apple', 'fz', 'no', 'zf']
 ```     
 
 ## Using split to parse strings into lists
@@ -293,14 +298,18 @@ symbols `{}`. These `{}` are replaced, in order, by the items
 that follow in the `format()` function applied.
 
 ```python
->>> a = 15
->>> b = 41
->>> print( "a + b = ", a+b)
-a + b =  56
->>> print( "{} + {} = {}".format(a,b,a+b))
-15 + 41 = 56
->>> print("{} ({}) + {} ({}) = {}".format("a",a,"b",b,a+b))
-a (15) + b (41) = 56
+a = 15
+b = 41
+print( "a + b = ", a+b)
+# will print
+#a + b =  56
+
+print( "{} + {} = {}".format(a,b,a+b))
+# will print
+#15 + 41 = 56
+print("{} ({}) + {} ({}) = {}".format("a",a,"b",b,a+b))
+# will print
+# a (15) + b (41) = 56
 ```
 
 
@@ -308,24 +317,28 @@ a (15) + b (41) = 56
 
 This is less typical usage.
 
-Can also use `rjust` and `ljust` to right or left justify a string in place
+Can also use `rjust` and `ljust` to right or left justify a string in place.
+
 ```python
->>> n = [1, 2, 'oh my god']
->>> print(n)
-[1, 2, 'oh my god']
+n = [1, 2, 'oh my god']
+print(n)
+# will print
+# [1, 2, 'oh my god']
 # print things out with fancier printing
->>> print(n[0].rjust(5), n[1].rjust(5), n[2].ljust(10))
-AttributeError: 'int' object has no attribute 'rjust'
->>> print( repr(n[0]).rjust(5), repr(n[1]).rjust(5), n[2].ljust(10))
-    1     2 oh my god
->>> print( repr(n[0]).ljust(5), repr(n[1]).rjust(5), n[2].ljust(10))
-1         2 oh my god
->>> print( repr(n[0]).ljust(5), repr(n[1]).rjust(5), n[2].rjust(10))
-    1     2  oh my god
->>> print( repr(n[0]).rjust(5), repr(n[1]).rjust(5), n[2].rjust(12))
-    1     2    oh my god
->>> print( repr(n[0]).rjust(5), repr(n[1]).rjust(5), n[2].ljust(12))
-    1     2 oh my god
+print(n[0].rjust(5), n[1].rjust(5), n[2].ljust(10))
+# gives error
+# AttributeError: 'int' object has no attribute 'rjust'
+
+print( repr(n[0]).rjust(5), repr(n[1]).rjust(5), n[2].ljust(10))
+#    1     2 oh my god
+print( repr(n[0]).ljust(5), repr(n[1]).rjust(5), n[2].ljust(10))
+#1         2 oh my god
+print( repr(n[0]).ljust(5), repr(n[1]).rjust(5), n[2].rjust(10))
+#    1     2  oh my god
+print( repr(n[0]).rjust(5), repr(n[1]).rjust(5), n[2].rjust(12))
+#    1     2    oh my god
+print( repr(n[0]).rjust(5), repr(n[1]).rjust(5), n[2].ljust(12))
+#    1     2 oh my god
 ```
 
 ## String joining and appending
