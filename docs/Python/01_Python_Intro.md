@@ -289,7 +289,7 @@ print("%-5s %5s %-10s."%(n[0],n[1],n[2]))
 print("%-5s %5s %20s."%(n[0],n[1],n[2]))
 # prints
 1         2            oh my god.
-
+```
 
 ## Print out with placeholders
 
