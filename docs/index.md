@@ -29,3 +29,4 @@ Major Topic Areas
 * 4 [UNIX 4: Misc Tricks](UNIX/03_Wrapup_and_Tools) [PDF](UNIX/03_Wrapup_and_Tools.pdf)
 
 * 5 [Python 1: Intro](Python/01_Python_Intro)
+* 6 [Python 2: Logic,Loops,IO](Python/02_Loops_IO)
