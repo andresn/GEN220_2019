@@ -95,7 +95,7 @@ if 10 != 20:
    print("10 is not equal to 20")
 ```
 
-`<`, `>=`, `>`, `>=` for less than, less than or equal to, greater than, greater than or equal to.
+`<`, `<=`, `>`, `>=` for less than, less than or equal to, greater than, greater than or equal to.
 
 ```python
 a=7
@@ -198,14 +198,14 @@ list = [7, 10, 2, 2, 7]
 for i in range(len(list)):
     print("list item ",i, "=",list[i])
     # print("list[%d] = %s"%(i,list[i])) # I like formatted printing too
-# prints out 
-# item[0] = 1
-# item[1] = 7
-# item[2] = 8
 
 list=(1,7,8)
 for item in list:
     print("item is ",item)
+# prints out 
+# item[0] = 1
+# item[1] = 7
+# item[2] = 8
 
 #can use enumerate to get the index number
 for idx,item in enumerate(list):
@@ -345,7 +345,7 @@ for line in info:
 import csv
 file2 = "test2.csv"
 with open(file2) as csvfile:
-    reader = csv.reader(csvfile,delimiter=",",quotechar='|')
+    reader = csv.reader(csvfile,delimiter=",")
     for row in reader:
         print("\t".join(row))
 with open("outtest.csv","w") as csvfile:
