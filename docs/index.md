@@ -28,5 +28,7 @@ Major Topic Areas
 * 3 [UNIX 3: Analysis and Programming](UNIX/02_Analysis_summary) [PDF](UNIX/02_Analysis_summary.pdf)
 * 4 [UNIX 4: Misc Tricks](UNIX/03_Wrapup_and_Tools) [PDF](UNIX/03_Wrapup_and_Tools.pdf)
 
-* 5 [Python 1: Intro](Python/01_Python_Intro)
-* 6 [Python 2: Logic,Loops,IO](Python/02_Loops_IO)
+* 5 [Python 1: Intro](Python/01_Python_Intro) [PDF](Python/01_Python_Intro.pdf)
+* 6 [Python 2: Logic,Loops,IO](Python/02_Loops_IO) [PDF](Python/02_Loops_IO.pdf)
+* 7 [Python 3: Dictionaries and Functions](Python/03_Dict_Func.md) [PDF](Python/03_Dict_Func.pdf)
+* 7 [Python 4: Workshop](Python/04_Workshop) [PDF](Python/04_Workshop.pdf)
