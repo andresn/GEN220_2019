@@ -33,3 +33,4 @@ Major Topic Areas
 * 6 [Python 2: Logic,Loops,IO](Python/02_Loops_IO) [PDF](Python/02_Loops_IO.pdf)
 * 7 [Python 3: Dictionaries and Functions](Python/03_Dict_Func.md) [PDF](Python/03_Dict_Func.pdf)
 * 7 [Python 4: Workshop](Python/04_Workshop) [PDF](Python/04_Workshop.pdf)
+* 8 [Python 5: Regular Expressions](Python/05_String_patterns) [PDF](Python/05_String_patterns.pdf)
