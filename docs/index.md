@@ -19,7 +19,8 @@ Major Topic Areas
 
 # Homework
 
-* HW1 - [Homework 1](Assignments/HW1) [PDF](Assignments/HW1.pdf)
+* HW1 - [Homework 1](Assignments/HW1) [PDF](Assignments/HW1.pdf) 
+* HW2 - [Homework 2](Assignments/HW2) [PDF](Assignments/HW2.pdf) - Due Nov 1 (12:00 Noon)
 
 # Lectures
 
