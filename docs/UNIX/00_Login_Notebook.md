@@ -8,7 +8,7 @@ This class will emphasize UNIX skills to support doing genomics and evolutionary
 * [Happy Belly Bioinformatics](https://astrobiomike.github.io/unix/)
 
 
-# Logging into Cluster
+## Logging into Cluster
 
 You will need to have a terminal to get onto the system. On Mac that is called 'Terminal'.
 On Windows [MobaXTerm](https://mobaxterm.mobatek.net/) is the best tool. Choose the 'Free' and 'Portable Version'.
@@ -224,7 +224,7 @@ Now you need to copy your ssh key FROM your laptop TO the cluster.
 ```
 
 
-# Web Access with Jupyter
+## Web Access with Jupyter
 
 We will login and setup access to the cluster and support a notebook interface to the cluster. To do this you will end up needing to open two terminal windows. One where you will login to the cluster and run a job with sbatch. The other window you will do a login to the cluster, but that will support setting up what is called 'ssh tunnel'.
 
@@ -258,7 +258,7 @@ http://NODE:8706/?token=a844e90f68c82...
 ```
 This is an example - NODE will be filled in with the name of a specific computer name from the cluster (same as the one in the ssh command above). You need to REPLACE the text *NODE* above with *localhost* and put that into your web browser running on your laptop.
 
-# Practice steps.
+## Practice steps.
 
 1. Generate a new directory
 2. Navigate into the directory
