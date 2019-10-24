@@ -232,7 +232,7 @@ You should run this command from one of your own directories eg. your Home direc
 ```bash
 [your laptop] $ ssh cluster.hpcc.ucr.edu
 [hpcc] $ cd ~ # go to your home directory
-[hpcc] $ batch -p short /bigdata/gen220/shared/login/submit_jupyter.sh
+[hpcc] $ sbatch -p short /bigdata/gen220/shared/login/submit_jupyter.sh
 ```
 
 This will generate a file `jupyter-notebook-NNNNN.log` where the number is the job currently running. This number would have also been displayed when you submit the job with 'sbatch'. You can also view the status of your jobs with `squeue -u $USER`.
@@ -248,7 +248,10 @@ Note the number of the ports (8706) will be different since it is randomly gener
 
 ON MobaXTerm you can just run a command line ssh option at the bottom of the screen so you can copy that to run.
 
-**ON your mac/linux machine** you will need to open a second terminal and copy and paste that ssh command exactly as it is in the file and run that. If you have not setup ssh keys you will need to put in your password again.
+**ON your mac/linux machine** you will need to open a second terminal and copy and paste that ssh command exactly as it is in the file and run that. If you have not setup ssh keys you will need to put in your password again.  You will basically issue a command like:
+```
+ssh -NL 8706:NODE:8706 USERNAME@cluster.hpcc.ucr.edu
+```
 
 Read the rest of the log file you will see a message
 ```
@@ -258,6 +261,7 @@ http://NODE:8706/?token=a844e90f68c82...
 ```
 This is an example - NODE will be filled in with the name of a specific computer name from the cluster (same as the one in the ssh command above). You need to REPLACE the text *NODE* above with *localhost* and put that into your web browser running on your laptop.
 
+So you will need to open your webbrowser and open the URL: http://localhost:8706/ - when you get to the prompt put the token string from the logfile (something like a844e90f68c82...). This will now let you run web jupyter notebook and also use the web to edit your text files directly in the editor that is setup for python or bash syntax.
 ## Practice steps.
 
 1. Generate a new directory
