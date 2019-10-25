@@ -344,7 +344,7 @@ GFF parsing - [http://biopython.org/wiki/GFF_Parsing](http://biopython.org/wiki/
 import os
 from BCBio import GFF
 gffurl="https://fungidb.org/common/downloads/release-45/ScerevisiaeS288c/gff/data/FungiDB-45_ScerevisiaeS288c.gff"
-in_file = os.basename(gffurl)
+in_file = os.path.basename(gffurl)
 
 if not os.path.exists(in_file):
     os.system("curl -O "+gffurl)
