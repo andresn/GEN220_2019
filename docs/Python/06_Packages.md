@@ -19,7 +19,9 @@ Do this one-time
 ```
 $ mkdir ~/bigdata/.conda
 $ ln -s ~/bigdata/.conda ~/.conda
-$ conda create -y -n gen220 python=3 biopython bcbio-gff
+$ conda create -y -n gen220 python=3
+$ source activate gen220
+$ conda install biopython bcbio-gff
 ```
 
 ## Python Libraries
