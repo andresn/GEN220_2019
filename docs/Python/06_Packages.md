@@ -243,10 +243,11 @@ from Bio import SeqIO
 from Bio.Seq import Seq
 filename = sys.argv[1]
 for seq_record in SeqIO.parse( filename , "genbank"):
-print(seq_record.id)
-for feature in seq_record.features:
-    print("\t",feature.type,feature.location)
-    print("\t",feature.type,feature.location.start, feature.location.end, feature.location.strand)
+    print(seq_record.id)
+    for feature in seq_record.features:
+        print("\t",feature.type,feature.location)
+        print("\t",feature.type,feature.location.start,
+	feature.location.end, feature.location.strand)
 
 ```
 
