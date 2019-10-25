@@ -21,6 +21,9 @@ $ mkdir ~/bigdata/.conda
 $ ln -s ~/bigdata/.conda ~/.conda
 $ conda create -y -n gen220 python=3
 $ source activate gen220
+$ conda config --add channels defaults
+$ conda config --add channels bioconda
+$ conda config --add channels conda-forge
 $ conda install biopython bcbio-gff
 ```
 
