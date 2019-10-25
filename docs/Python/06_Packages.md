@@ -45,7 +45,8 @@ compressed. This can save space for large files or when you get data
 from a resource without having to decompress it.
 
 ```python
-with gzip.open(file,"r") as fh:
+import gzip
+with gzip.open(file,"rt") as fh:
     for line in fh:
         print("The first line from uncompressed")
 	break
