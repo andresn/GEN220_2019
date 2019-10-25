@@ -16,15 +16,15 @@ You can check that this works by doing `python -V` and see the version is 3.XX
 This will allow you to install python packages as well as any other pkgs you might want to.
 
 Do this one-time
-```
-$ mkdir ~/bigdata/.conda
-$ ln -s ~/bigdata/.conda ~/.conda
-$ conda create -y -n gen220 python=3
-$ source activate gen220
-$ conda config --add channels defaults
-$ conda config --add channels bioconda
-$ conda config --add channels conda-forge
-$ conda install biopython bcbio-gff
+```bash
+ mkdir ~/bigdata/.conda
+ ln -s ~/bigdata/.conda ~/.conda
+ conda create -y -n gen220 python=3
+ source activate gen220
+ conda config --add channels defaults
+ conda config --add channels bioconda
+ conda config --add channels conda-forge
+ conda install biopython bcbio-gff
 ```
 
 ## Python Libraries
