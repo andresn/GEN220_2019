@@ -341,20 +341,31 @@ GFF parsing - [http://biopython.org/wiki/GFF_Parsing](http://biopython.org/wiki/
 # remember to have installed `bcbio-gff` package in your local conda
 
 ```python
+#!/usr/bin/env python3
 import os
-from BCBio import GFF
 gffurl="https://fungidb.org/common/downloads/release-45/ScerevisiaeS288c/gff/data/FungiDB-45_ScerevisiaeS288c.gff"
 in_file = os.path.basename(gffurl)
 
 if not os.path.exists(in_file):
     os.system("curl -O "+gffurl)
 
+from BCBio import GFF
 limit_info = dict(
-        gff_id = ["chr1"],
-        gff_source = ["Coding_transcript"])
+        gff_id = ["BK006934"],
+        gff_type = ["CDS"],
+        gff_source = ["EuPathDB"])
 
 in_handle = open(in_file)
 for rec in GFF.parse(in_handle, limit_info=limit_info):
-    print rec.features[0]
+    for feat in rec.features:
+        print(feat)
+        break
+in_handle.close()
+
+in_handle = open(in_file)
+for rec in GFF.parse(in_handle):
+    for feat in rec.features:
+        print(feat)
+        break
 in_handle.close()
 ```
