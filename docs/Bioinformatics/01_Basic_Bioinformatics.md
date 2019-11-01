@@ -36,13 +36,13 @@ these two species.
 module load ncbi-blast/2.9.0+ # load the module on the biocluster
 makeblastdb -dbtype nucl -in C_glabrata_ORFs.fasta
 ls
-# C_glabrata_ORFs.fa      C_glabrata_ORFs.fa.nhr
-# C_glabrata_ORFs.fa.nin  C_glabrata_ORFs.fa.nsq
+# C_glabrata_ORFs.fasta      C_glabrata_ORFs.fasta.nhr
+# C_glabrata_ORFs.fasta.nin  C_glabrata_ORFs.fasta.nsq
 # Yeast_chr2_ORFs.fa
 head -n 7 Yeast_chr2_ORFs.fa  > YBL001C.cds # get 1st seq for an example
 # we do this because I checked and that sequence takes up the first 7 lines
 # of the file
-blastn -query YAL027W.cds -db C_glabrata_ORFs.fa
+blastn -query YAL027W.cds -db C_glabrata_ORFs.fasta
  ```
 
 ## BLAST Running
