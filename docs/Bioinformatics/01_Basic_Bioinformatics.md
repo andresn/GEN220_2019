@@ -34,7 +34,7 @@ question is, what ORFs are similar at the DNA level between
 these two species.
 ```bash
 module load ncbi-blast/2.9.0+ # load the module on the biocluster
-makeblastdb -dbtype nucl -in C_glabrata_ORFs.fa
+makeblastdb -dbtype nucl -in C_glabrata_ORFs.fasta
 ls
 # C_glabrata_ORFs.fa      C_glabrata_ORFs.fa.nhr
 # C_glabrata_ORFs.fa.nin  C_glabrata_ORFs.fa.nsq
