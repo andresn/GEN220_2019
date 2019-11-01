@@ -35,3 +35,5 @@ Major Topic Areas
 * 7 [Python 4: Workshop](Python/04_Workshop) [PDF](Python/04_Workshop.pdf)
 * 8 [Python 5: Regular Expressions](Python/05_String_patterns) [PDF](Python/05_String_patterns.pdf)
 * 9 [Python 6: Packages/BioPython](Python/06_Packages) [PDF](Python/06_Packages.pdf)
+
+* 10 [Bioinformatics 1](Bioinformatics/01_Basic_Bioinformatics) [PDF](Bioinformatics/01_Basic_Bioinformatics.pdf)
