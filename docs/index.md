@@ -22,6 +22,10 @@ Major Topic Areas
 * HW1 - [Homework 1](Assignments/HW1) [PDF](Assignments/HW1.pdf) 
 * HW2 - [Homework 2](Assignments/HW2) [PDF](Assignments/HW2.pdf) - Due Nov 1 (12:00 Noon)
 
+# Project
+
+* Project Team Ideas (Project)[Assignments/Project_Teams)
+
 # Lectures
 
 * 0 & 1 [Course Intro / UNIX I: Cmdline](UNIX/00_Login_Notebook) [PDF](UNIX/00_Login_Notebook.pdf)
