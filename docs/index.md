@@ -24,7 +24,7 @@ Major Topic Areas
 
 # Project
 
-* Project Team Ideas (Project)[Assignments/Project_Teams)
+* Project Team Ideas [Project](Assignments/Project_Teams)
 
 # Lectures
 
