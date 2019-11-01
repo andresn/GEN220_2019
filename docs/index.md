@@ -22,6 +22,10 @@ Major Topic Areas
 * HW1 - [Homework 1](Assignments/HW1) [PDF](Assignments/HW1.pdf) 
 * HW2 - [Homework 2](Assignments/HW2) [PDF](Assignments/HW2.pdf) - Due Nov 1 (12:00 Noon)
 
+# Project
+
+* Project Team Ideas [Project](Assignments/Project_Teams)
+
 # Lectures
 
 * 0 & 1 [Course Intro / UNIX I: Cmdline](UNIX/00_Login_Notebook) [PDF](UNIX/00_Login_Notebook.pdf)
@@ -35,3 +39,5 @@ Major Topic Areas
 * 7 [Python 4: Workshop](Python/04_Workshop) [PDF](Python/04_Workshop.pdf)
 * 8 [Python 5: Regular Expressions](Python/05_String_patterns) [PDF](Python/05_String_patterns.pdf)
 * 9 [Python 6: Packages/BioPython](Python/06_Packages) [PDF](Python/06_Packages.pdf)
+
+* 10 [Bioinformatics 1](Bioinformatics/01_Basic_Bioinformatics) [PDF](Bioinformatics/01_Basic_Bioinformatics.pdf)
