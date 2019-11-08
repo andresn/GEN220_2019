@@ -40,6 +40,6 @@ Major Topic Areas
 * 8 [Python 5: Regular Expressions](Python/05_String_patterns) [PDF](Python/05_String_patterns.pdf)
 * 9 [Python 6: Packages/BioPython](Python/06_Packages) [PDF](Python/06_Packages.pdf)
 
-* 10 [Bioinformatics 1](Bioinformatics/01_Basic_Bioinformatics) [PDF](Bioinformatics/01_Basic_Bioinformatics.pdf)
-* 11 [Bioinformatics 2](Bioinformatics/02_orthology) [PDF](Bioinformatics/02_orthology.pdf)
-* 12 [Bioinformatics 3](Bioinformatics/03_Range_overlap) [PDF](Bioinformatics/03_Range_overlap.pdf)
+* 10 [Bioinformatics 1: Basics and BLAST](Bioinformatics/01_Basic_Bioinformatics) [PDF](Bioinformatics/01_Basic_Bioinformatics.pdf)
+* 11 [Bioinformatics 2: Orthologs](Bioinformatics/02_orthology) [PDF](Bioinformatics/02_orthology.pdf)
+* 12 [Bioinformatics 3: Ranges](Bioinformatics/03_Range_overlap) [PDF](Bioinformatics/03_Range_overlap.pdf)
