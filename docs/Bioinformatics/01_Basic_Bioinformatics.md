@@ -40,6 +40,7 @@ ls
 # C_glabrata_ORFs.fasta.nin  C_glabrata_ORFs.fasta.nsq
 # Yeast_chr2_ORFs.fa
 #head -n 7 Yeast_chr2_ORFs.fa  > YBL001C.cds # get 1st seq for an example
+
 # we do this because I checked and that sequence takes up the first 7 lines
 # of the file
 blastn -query Yeast_chr2_ORFs.fa -db C_glabrata_ORFs.fasta
