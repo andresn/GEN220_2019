@@ -24,7 +24,7 @@ cut -f3 snp_gene_intersect.tab | sort | uniq -c
 
 # how many SNPs does each gene have?
 
-grep -E "\tgene\t"  snp_gene_intersect.tab > snp_gene_intersect.genes_only.tab
+grep -P "\tgene\t"  snp_gene_intersect.tab > snp_gene_intersect.genes_only.tab
 # this outputs gene SNP counts ordered by genename which is actually chromosome
 # position nicely
 cut -f9 snp_gene_intersect.genes_only.tab | sed 's/^ID=//; s/;Name=.*//' | sort | uniq -c > gene_snp_count.txt
