@@ -44,4 +44,4 @@ Major Topic Areas
 * 11 [Bioinformatics 2: Orthologs](Bioinformatics/02_orthology) [PDF](Bioinformatics/02_orthology.pdf)
 * 12 [Bioinformatics 3: Ranges](Bioinformatics/03_Range_overlap) [PDF](Bioinformatics/03_Range_overlap.pdf)
 * 13 [Bioinformatics 4: Workshop - parsing](Bioinformatics/04_Workshop_parse) [PDF](Bioinformatics/04_Workshop_parse.pdf)
-* 14 [Bioinformatics 5: RNASeq](Bioinformatics/05_RNAseq) [PDF](Bioinformatics/05_RNAseq.pdf)
+* 14 [Bioinformatics 5: RNASeq](Bioinformatics/05_RNASeq) [PDF](Bioinformatics/05_RNASeq.pdf)
