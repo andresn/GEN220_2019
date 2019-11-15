@@ -106,7 +106,7 @@ Opening the file cyanobacteria/Results_Nov08/Orthogroups.txt
 
 ## Format
 
-GroupName\tSp1_Gene1, Sp1_Gene2\tSp2_Gene1, Sp2_Gene2\tSp3_Gene1, Sp3_Gene2
+```GroupName\tSp1_Gene1, Sp1_Gene2\tSp2_Gene1, Sp2_Gene2\tSp3_Gene1, Sp3_Gene2```
 
 
 ```
