@@ -21,6 +21,7 @@ Major Topic Areas
 
 * HW1 - [Homework 1](Assignments/HW1) [PDF](Assignments/HW1.pdf) 
 * HW2 - [Homework 2](Assignments/HW2) [PDF](Assignments/HW2.pdf) - Due Nov 1 (12:00 Noon)
+* HW3 - [Homework 3](Assignments/HW3) [PDF](Assignments/HW3.pdf) - Due Dec 2 
 
 # Project
 
@@ -45,3 +46,4 @@ Major Topic Areas
 * 12 [Bioinformatics 3: Ranges](Bioinformatics/03_Range_overlap) [PDF](Bioinformatics/03_Range_overlap.pdf)
 * 13 [Bioinformatics 4: Workshop - parsing](Bioinformatics/04_Workshop_parse) [PDF](Bioinformatics/04_Workshop_parse.pdf)
 * 14 [Bioinformatics 5: RNASeq](Bioinformatics/05_RNASeq) [PDF](Bioinformatics/05_RNASeq.pdf)
+* 15 [Bioinformatics 6: Protein domains](Bioinformatics/06_Protein_domains) [PDF](Bioinformatics/06_Protein_domains.pdf)
