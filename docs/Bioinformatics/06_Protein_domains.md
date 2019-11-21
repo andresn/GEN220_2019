@@ -4,7 +4,7 @@ See Overview lecture [Domains lecture](Domains_lecture.pdf)
 
 # To Find Domains
 
-Searching with [HMMer](http://hmmer.org/)
+Searching with [HMMer](http://hmmer.org/) against [Pfam](http://pfam.xfam.org) 
 
 See the HMMER [tutorial](http://eddylab.org/software/hmmer3/3.1b2/Userguide.pdf)
 
