@@ -55,3 +55,4 @@ Major Topic Areas
 * 13 [Bioinformatics 4: Workshop - parsing](Bioinformatics/04_Workshop_parse) [PDF](Bioinformatics/04_Workshop_parse.pdf)
 * 14 [Bioinformatics 5: RNASeq](Bioinformatics/05_RNASeq) [PDF](Bioinformatics/05_RNASeq.pdf)
 * 15 [Bioinformatics 6: Protein domains](Bioinformatics/06_Protein_domains) [PDF](Bioinformatics/06_Protein_domains.pdf)
+* 16 [Bioinformatics 7: R basics](https://biodataprog.github.io/2018_programming-intro/Lectures/14_Utilities_Rplotting.html)
