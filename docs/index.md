@@ -3,6 +3,14 @@
 See the [Syllabus](Resources/Syllabus) [PDF](Resources/Syllabus.pdf)
 for an overview of lecture topics.
 
+Examples worked during class will be uploaded in [this working repository](https://github.com/biodataprog/GEN220_2019_examples).
+To check it out and keep it update.
+```
+git clone https://github.com/biodataprog/GEN220_2019_examples.git
+cd GEN220_2019_examples
+# ... time passes, new examples are uploaded
+git pull # to get the latest version of the files
+```
 # Resources
 * [SSH keys](Resources/SSH_keys)
 * [Github workflows](Resources/Git_tutorial) and [Software Carpentry Github Tutorial](http://swcarpentry.github.io/git-novice/)
