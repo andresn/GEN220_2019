@@ -50,8 +50,7 @@ blastn -query Yeast_chr2_ORFs.fa -db C_glabrata_ORFs.fasta
 
 Change the output format to tab delimited with `-outfmt 6` or `-outfmt 7`
 ```bash
-$ blastn -query YBL001C.cds -db C_glabrata_ORFs.fasta \
-  -evalue 0.001 -outfmt 7 -out YBL001C-vs-Cglabrata.BLASTN.tab
+$ blastn -query YBL001C.cds -db C_glabrata_ORFs.fasta -evalue 0.001 -outfmt 7 -out YBL001C-vs-Cglabrata.BLASTN.tab
 ```
 
 This will query the 1 sequence and produce a tab delimited file.
@@ -60,8 +59,7 @@ If you provide a multi-FASTA format file with many sequences, each one
 will be queried and all the results concated together.
 
 ```bash
-$ blastn -query Yeast_chr2_ORFs.fa -db C_glabrata_ORFs.fasta \
-  -evalue 0.001 -outfmt 7 -out yeast_chr2-vs-Cglabrata.BLASTN.tab
+$ blastn -query Yeast_chr2_ORFs.fa -db C_glabrata_ORFs.fasta -evalue 0.001 -outfmt 7 -out yeast_chr2-vs-Cglabrata.BLASTN.tab
 ```
 
 ## BLAST: what are the tools
