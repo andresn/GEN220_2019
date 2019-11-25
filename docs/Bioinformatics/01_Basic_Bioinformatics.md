@@ -75,7 +75,7 @@ search in protein space)
 * `blastdbcmd` - retrieve a sequence from a blast formatted DB
 
 
-##BLAST: what are the cmdline options?
+## BLAST: what are the cmdline options?
 
 All the tools have documented command line options. Use -h or -help to
 get detailed info. Sometimes with no arguments will print
@@ -99,7 +99,7 @@ Use '-help' to print detailed descriptions of command line arguments
 ========================================================================
 ```
 
-##BLAST: what are the cmdline options?
+## BLAST: what are the cmdline options?
 ```bash
 $ blastn -h
 USAGE
