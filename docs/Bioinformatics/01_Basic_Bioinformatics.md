@@ -60,7 +60,7 @@ If you provide a multi-FASTA format file with many sequences, each one
 will be queried and all the results concated together.
 
 ```bash
-$ blastn -query Yeast_chr2_ORFss.fa -db C_glabrata_ORFss.fa \
+$ blastn -query Yeast_chr2_ORFs.fa -db C_glabrata_ORFs.fasta \
   -evalue 0.001 -outfmt 7 -out yeast_chr2-vs-Cglabrata.BLASTN.tab
 ```
 
