@@ -173,7 +173,7 @@ samtools flagstat SRR3396381.sort.bam
 
 ## Get counts
 
-Subread - http://subread.sourceforge.net/
+Subread - [http://subread.sourceforge.net/](http://subread.sourceforge.net)
 
 ```bash
 module load subread

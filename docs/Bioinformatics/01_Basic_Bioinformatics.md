@@ -39,7 +39,7 @@ ls
 # C_glabrata_ORFs.fasta      C_glabrata_ORFs.fasta.nhr
 # C_glabrata_ORFs.fasta.nin  C_glabrata_ORFs.fasta.nsq
 # Yeast_chr2_ORFs.fa
-#head -n 7 Yeast_chr2_ORFs.fa  > YBL001C.cds # get 1st seq for an example
+head -n 7 Yeast_chr2_ORFs.fa  > YBL001C.cds # get 1st seq for an example
 
 # we do this because I checked and that sequence takes up the first 7 lines
 # of the file
@@ -50,7 +50,7 @@ blastn -query Yeast_chr2_ORFs.fa -db C_glabrata_ORFs.fasta
 
 Change the output format to tab delimited with `-outfmt 6` or `-outfmt 7`
 ```bash
-$ blastn -query YBL001C.cds -db C_glabrata_ORFs.fa \
+$ blastn -query YBL001C.cds -db C_glabrata_ORFs.fasta \
   -evalue 0.001 -outfmt 7 -out YBL001C-vs-Cglabrata.BLASTN.tab
 ```
 
