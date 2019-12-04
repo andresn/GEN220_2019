@@ -54,11 +54,11 @@ samtools tview SRR10574912.bam
 
 ## SNP calling
 
-There are many standardized SNP calling pipelines. GATK provides a robust pipeline that can be used.
+There are many standardized SNP calling pipelines. [GATK](https://software.broadinstitute.org/gatk/) provides a robust pipeline that can be used.
 
-Samtools/BCFTools are also useful and straight forward.
+[Samtools/BCFTools](http://www.htslib.org/) are also useful and straight forward.
 
-freebayes is another very useful pipeline for non-model systems.
+[freebayes](https://github.com/ekg/freebayes) is another very useful pipeline for non-model systems.
 
 ### Samtools/BCFTools SNP and INDEL calling
 
@@ -97,3 +97,15 @@ High-performance visualization tool for interactive exploration of
 large, integrated genomic datasets. It supports a wide variety of data
 types, including array-based and next-generation sequence data, and
 genomic annotations.
+
+## Public genome browsers
+
+Many browsers allow upload of aligned data (bam files) to integrate
+local data with public genome resources.
+
+* [Ensembl](http://ensembl.org), [Ensembl Genomes](http://ensemblgenomes.org/)
+* [UCSC Genome Browser](https://genome.ucsc.edu/)
+* [WormBase](https://www.wormbase.org/), [FlyBase](https://flybase.org/)
+* [TAIR](https://www.arabidopsis.org/index.jsp) - Arabidopsis, [Phytozome](https://phytozome.jgi.doe.gov/pz/portal.html)
+* [EuPathDB](http://eupathdb.org/), [JGI Genomes](https://genome.jgi.doe.gov/portal/)
+* [IMG/M - JGI](https://img.jgi.doe.gov/)
