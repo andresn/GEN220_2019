@@ -1,4 +1,4 @@
-as	# GEN220: Highthroughput Biological Data Analysis - Fall 2019
+# GEN220: Highthroughput Biological Data Analysis - Fall 2019
 
 See the [Syllabus](Resources/Syllabus) [PDF](Resources/Syllabus.pdf)
 for an overview of lecture topics.
