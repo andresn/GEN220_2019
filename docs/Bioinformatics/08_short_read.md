@@ -13,7 +13,7 @@ GENOME=S_enterica_CT18.fasta
 bwa index $GENOME
 ```
 
-### Algn reads
+### Align reads
 
 ```
 #SBATCH -p short -N 1 -n 16 --mem 4gb
