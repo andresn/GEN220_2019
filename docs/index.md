@@ -1,4 +1,4 @@
-# GEN220: Highthroughput Biological Data Analysis - Fall 2019
+as	# GEN220: Highthroughput Biological Data Analysis - Fall 2019
 
 See the [Syllabus](Resources/Syllabus) [PDF](Resources/Syllabus.pdf)
 for an overview of lecture topics.
@@ -29,7 +29,7 @@ Major Topic Areas
 
 * HW1 - [Homework 1](Assignments/HW1) [PDF](Assignments/HW1.pdf) 
 * HW2 - [Homework 2](Assignments/HW2) [PDF](Assignments/HW2.pdf) - Due Nov 1 (12:00 Noon)
-* HW3 - [Homework 3](Assignments/HW3) [PDF](Assignments/HW3.pdf) - Due Dec 2 
+* HW3 - [Homework 3](Assignments/HW3) [PDF](Assignments/HW3.pdf) - Due Dec 4
 
 # Project
 
@@ -57,3 +57,4 @@ Major Topic Areas
 * 15 [Bioinformatics 6: Protein domains](Bioinformatics/06_Protein_domains) [PDF](Bioinformatics/06_Protein_domains.pdf)
 * 16 [Bioinformatics 7: R basics](https://biodataprog.github.io/2018_programming-intro/Lectures/14_Utilities_Rplotting.html) - we will use Rstudio for this [http://rstudio.hpcc.ucr.edu](http://rstudio.hpcc.ucr.edu/) on-line or you can use it locally on your laptop if you have installed.
 * - Also see [https://datacarpentry.org/R-genomics/05-data-visualization.html](https://datacarpentry.org/R-genomics/05-data-visualization.html)
+* 17 [Bioinformatics 8: Short Reads](Bioinformatics/08_short_read) [PDF](Bioinformatics/08_short_read.pdf)
